@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>质品社交</title>
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+<script>
+	function detectmob() {  
+		if( navigator.userAgent.match(/Android/i)  
+		|| navigator.userAgent.match(/webOS/i)  
+		|| navigator.userAgent.match(/iPhone/i)  
+		|| navigator.userAgent.match(/iPad/i)  
+		|| navigator.userAgent.match(/iPod/i)  
+		|| navigator.userAgent.match(/BlackBerry/i)  
+		|| navigator.userAgent.match(/Windows Phone/i)  
+		){  
+			return true;  
+		}  
+		else {  
+			return false;  
+		}  
+	}
+	var link = document.createElement('link')
+	link.setAttribute("rel", "stylesheet")  
+    link.setAttribute("type", "text/css")
+	if (detectmob()) {
+		link.setAttribute("href", "./css/mobile.css") 
+	} else {
+		link.setAttribute("href", "./css/computer.css") 
+	}
+	var heads = document.getElementsByTagName("head")  
+    if(heads.length)  
+        heads[0].appendChild(link)
+    else  
+        document.documentElement.appendChild(link)
+</script>
+<link rel="icon" href="./imgs/bitbug_favicon.ico" type="image/x-icon">
+<style>
+	
+.section1 { background-position: 0 0;}
+.section2 {background-position: 0 300vh;}
+.section3 {background-position: 0 200vh;}
+.section4 {background-position: 0 100vh;}
+</style>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script>
+$(function(){
+	
+	console.log(window.navigator)
+	$('#dowebok').fullpage({
+		sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+		'navigation': true,
+	});
+});
+</script>
+</head>
+<body>
+
+<div id="dowebok">
+	<div class="section section1">
+	</div>
+	<div class="section section2">
+	</div>
+	<div class="section section3">
+	</div>
+	<div class="section section4">
+	</div>
+</div>
+
+</body>
+</html>
